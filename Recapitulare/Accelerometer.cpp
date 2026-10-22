@@ -1,0 +1,8 @@
+#include "Accelerometer.h"
+
+const float Accelerometer::kMaxValidValue = 10000;
+const float Accelerometer::kMinValidValue = - 10000;
+
+Accelerometer::Accelerometer(uint16_t id, Type type, const std::string& timestamp, bool status, float xAcceleration, float yAcceleration, float zAcceleration) :Sensor(id, type, timestamp, status), m_xAcceleration(xAcceleration), m_yAcceleration(yAcceleration), m_zAcceleration(zAcceleration)
+{
+}
