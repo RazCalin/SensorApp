@@ -4,6 +4,9 @@ class Accelerometer: public Sensor
 {
 public:
 	Accelerometer(uint16_t id, Type type, const std::string& timestamp, bool status, float xAcceleration, float yAcceleration, float zAcceleration);
+
+	bool IsMeasurementValid() const override;
+
 private:
 	float m_xAcceleration;
 	float m_yAcceleration;

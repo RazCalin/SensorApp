@@ -9,12 +9,23 @@ Sensor::Sensor(uint16_t id, Type type, const std::string& timestamp, bool status
 
 }
 
-bool Sensor::IsMeasurementValid()
+uint16_t Sensor::GetId() const
 {
-	/*if (m_type == Type::TEMP)
-		return m_values[0] <= 300 && m_values[0] >= 0;
-	return m_values[0] <= 10000 && m_values[0] >= -10000 &&
-		m_values[1] <= 10000 && m_values[1] >= -10000 &&
-		m_values[2] <= 10000 && m_values[2] >= -10000;*/
-	return false;
+	return m_id;
 }
+
+Type Sensor::GetType() const
+{
+	return m_type;
+}
+
+std::string Sensor::GetTimestamp() const
+{
+	return m_timestamp;
+}
+
+bool Sensor::GetStatus() const
+{
+	return m_status;
+}
+

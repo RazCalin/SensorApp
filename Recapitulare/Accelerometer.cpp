@@ -6,3 +6,10 @@ const float Accelerometer::kMinValidValue = - 10000;
 Accelerometer::Accelerometer(uint16_t id, Type type, const std::string& timestamp, bool status, float xAcceleration, float yAcceleration, float zAcceleration) :Sensor(id, type, timestamp, status), m_xAcceleration(xAcceleration), m_yAcceleration(yAcceleration), m_zAcceleration(zAcceleration)
 {
 }
+
+bool Accelerometer::IsMeasurementValid() const
+{
+	return m_xAcceleration >= kMinValidValue && m_xAcceleration <= kMaxValidValue &&
+		m_yAcceleration >= kMinValidValue && m_yAcceleration <= kMaxValidValue &&
+		m_zAcceleration >= kMinValidValue && m_zAcceleration <= kMaxValidValue;
+}
